@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; form-action 'self'; base-uri 'self'; object-src 'none';">
+    <title>Mazao Price Point | Tanzania crop prices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="shell">
+        <header class="topbar">
+            <a class="brand" href="#top"><span class="brand-mark">+</span> Mazao Price Point</a>
+            <nav class="nav" aria-label="Main navigation"><a href="#prices">Prices</a><a href="#submit">Submit a price</a><a href="#about">About</a><button class="subscribe" id="open-payment">Get daily alerts</button></nav>
+        </header>
+
+        <section class="hero" id="top">
+            <div><div class="eyebrow">Tanzania's crop market pulse</div><h1>Know the price.<br><span>Move with confidence.</span></h1><p class="hero-copy">A simple, trusted view of crop prices across Tanzania. Compare markets, follow daily movement, and help farmers make better selling decisions.</p></div>
+            <div class="hero-note"><strong>Market update · 19 September 2026</strong>Prices are collected from regional contributors and market checks. Last full refresh: 06:00 EAT.</div>
+        </section>
+
+        <section class="dashboard" aria-label="Market overview">
+            <div class="dash-label">Today's market overview</div><div class="dash-number">31 <small>regions covered</small></div><div class="dash-sub">A growing picture of what Tanzania's crops are worth today.</div>
+            <div class="dash-stats"><div class="dash-stat"><b>24</b><span>crop types tracked</span></div><div class="dash-stat"><b>+8.4%</b><span>average weekly change</span></div></div>
+        </section>
+
+        <section id="prices">
+            <div class="section-head"><div><h2>Today's prices</h2><p>Indicative wholesale prices per 100 kg. Select a region to see its full crop catalogue.</p></div><div class="filter"><span>Viewing</span><select id="region-filter" aria-label="Filter prices by region"><option value="all">All Tanzania</option></select></div></div>
+            <div class="price-grid" id="price-grid"></div>
+        </section>
+
+        <section class="lower" id="submit">
+            <div class="panel"><h2>Share a market price</h2><p class="panel-intro">Are you at the market today? Your update helps everyone see a clearer, more current picture.</p><form id="price-form"><label>Your name<input name="name" maxlength="80" autocomplete="name" placeholder="e.g. Asha Mushi" required></label><label>Region<select name="region" id="submission-region" required><option value="">Choose region</option></select></label><label>Crop<input name="crop" maxlength="60" placeholder="e.g. Maize" required></label><label>Price (TZS)<input name="price" type="number" min="1" max="100000000" placeholder="e.g. 85000" required></label><label class="wide">Market or town<input name="market" maxlength="100" placeholder="e.g. Soko Kuu, Mbeya" required></label><button class="submit" type="submit">Send price update</button><div class="message" id="form-message">Thank you. Your price update has been received for review.</div></form></div>
+            <aside class="panel why" id="about"><h2>Built for the people who grow, trade and buy.</h2><div class="benefit"><div class="benefit-icon">01</div><div><strong>See the whole country</strong><span>Compare prices from coastal markets to the highlands in one place.</span></div></div><div class="benefit"><div class="benefit-icon">02</div><div><strong>Spot the movement</strong><span>Clear up and down signals show where the market is changing.</span></div></div><div class="benefit"><div class="benefit-icon">03</div><div><strong>Get it every morning</strong><span>Subscribe to daily price alerts by mobile money.</span></div></div></aside>
+        </section>
+        <footer><span>MAZAO PRICE POINT · TANZANIA</span><span>Prices are indicative and subject to local market verification.</span></footer>
+    </main>
+
+    <div class="modal-backdrop" id="payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-title"><div class="modal"><div class="modal-top"><div><div class="eyebrow">Secure payment verification</div><h2 id="payment-title">Stay one step ahead.</h2></div><button class="close" id="close-payment" aria-label="Close payment window">x</button></div><div class="amount"><label><input type="radio" name="plan" value="monthly" checked> Monthly access <strong>TZS 4,000</strong></label><label><input type="radio" name="plan" value="weekly"> Weekly access <strong>TZS 1,500</strong></label></div><form class="pay-form" id="payment-form"><label>Mobile money number<input type="tel" name="phone" placeholder="07XX XXX XXX" autocomplete="tel" pattern="(?:\+255|0)[67]\d{8}" title="Enter a valid Tanzanian mobile number" required></label><label>Choose network<select name="network" required><option value="">Select network</option><option>M-Pesa</option><option>Airtel Money</option><option>Mixx by Yas</option><option>Halopesa</option></select></label><button type="submit">Request secure payment</button></form><div class="message" id="payment-message">Your payment request will be sent to the selected mobile-money network. Access must be confirmed by the payment server.</div></div></div>
+</body>
+</html>
