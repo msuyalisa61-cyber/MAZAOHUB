@@ -1,0 +1,21 @@
+{
+  "name": "mazaohub",
+  "version": "1.0.0",
+  "description": "Mazao Price Point market data app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "tanzania",
+    "agriculture",
+    "market",
+    "prices"
+  ],
+  "author": "msuyalisa61-cyber",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

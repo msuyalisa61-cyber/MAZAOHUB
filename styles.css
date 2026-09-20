@@ -1,111 +1,47 @@
- :root {
-    --ink: #18231f;
-    --muted: #6f7d76;
-    --paper: #f5f3ec;
-    --card: #fffdf8;
-    --line: #e2e4db;
-    --green: #176b4b;
-    --green-dark: #0d3d2c;
-    --lime: #d9ef9f;
-    --coral: #ed705a;
-    --gold: #e9b949;
-    --shadow: 0 18px 50px rgba(35, 54, 43, .08);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; form-action 'self'; base-uri 'self'; object-src 'none';">
+    <title>Mazao Price Point | Tanzania crop prices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="shell">
+        <header class="topbar">
+            <a class="brand" href="#top"><span class="brand-mark">+</span> Mazao Price Point</a>
+            <nav class="nav" aria-label="Main navigation"><a href="#prices">Prices</a><a href="#submit">Submit a price</a><a href="#about">About</a><button class="subscribe" id="open-payment">Get daily alerts</button></nav>
+        </header>
 
-* { box-sizing: border-box; }
-body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; }
-button, input, select { font: inherit; }
-button { cursor: pointer; }
-.shell { max-width: 1280px; margin: auto; padding: 0 32px 48px; }
-.topbar { height: 78px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
-.brand { display: flex; align-items: center; gap: 11px; color: var(--green-dark); text-decoration: none; font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -.04em; font-size: 20px; }
-.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: var(--green-dark); background: var(--lime); border-radius: 11px 11px 11px 3px; font-size: 18px; }
-.nav { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: 14px; font-weight: 600; }
-.nav a { color: inherit; text-decoration: none; }
-.nav a:hover { color: var(--green); }
-.subscribe { border: 0; background: var(--green); color: white; padding: 11px 18px; border-radius: 9px; font-weight: 700; }
-.subscribe:hover { background: var(--green-dark); }
-.hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; padding: 62px 0 48px; align-items: end; }
-.eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; font-weight: 700; }
-h1, h2, h3 { font-family: "Space Grotesk", sans-serif; margin: 0; letter-spacing: -.055em; }
-h1 { max-width: 700px; font-size: clamp(42px, 6vw, 78px); line-height: .98; margin-top: 15px; }
-h1 span { color: var(--coral); }
-.hero-copy { max-width: 510px; margin: 24px 0 0; line-height: 1.7; color: var(--muted); font-size: 16px; }
-.hero-note { border-left: 3px solid var(--gold); padding: 14px 0 14px 18px; color: var(--muted); font-size: 14px; line-height: 1.6; }
-.hero-note strong { display: block; color: var(--ink); margin-bottom: 4px; }
-.dashboard { background: var(--green-dark); color: white; padding: 28px; border-radius: 18px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
-.dashboard:after { content: ""; position: absolute; width: 180px; height: 180px; border: 1px solid rgba(217,239,159,.18); border-radius: 50%; right: -65px; top: -60px; }
-.dash-label { color: var(--lime); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
-.dash-number { font-family: "Space Grotesk", sans-serif; font-size: 45px; letter-spacing: -.06em; margin: 18px 0 3px; }
-.dash-number small { font-size: 17px; color: #b6c7bd; letter-spacing: 0; }
-.dash-sub { color: #b6c7bd; font-size: 13px; }
-.dash-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
-.dash-stat { border-top: 1px solid rgba(255,255,255,.16); padding-top: 12px; }
-.dash-stat b { display: block; font-size: 20px; }
-.dash-stat span { color: #b6c7bd; font-size: 12px; }
-.section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin: 20px 0 18px; }
-.section-head h2 { font-size: 29px; }
-.section-head p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
-.filter { display: flex; align-items: center; gap: 9px; border: 1px solid var(--line); background: var(--card); padding: 7px 12px; border-radius: 8px; color: var(--muted); font-size: 13px; }
-.filter select { border: 0; background: transparent; color: var(--ink); font-weight: 700; outline: 0; }
-.price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
-.price-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 19px; transition: transform .2s ease, box-shadow .2s ease; }
-.price-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.crop-line { display: flex; justify-content: space-between; align-items: start; }
-.crop-icon { width: 40px; height: 40px; display: grid; place-items: center; background: #edf3d9; border-radius: 10px; font-size: 21px; }
-.trend { font-size: 12px; font-weight: 700; padding: 5px 7px; border-radius: 5px; }
-.up { color: #187044; background: #e4f4df; }
-.down { color: #ba4d38; background: #fbe4dd; }
-.crop-name { font-family: "Space Grotesk", sans-serif; font-size: 20px; margin: 17px 0 3px; }
-.location { color: var(--muted); font-size: 12px; }
-.price { font-family: "Space Grotesk", sans-serif; font-size: 24px; margin-top: 17px; letter-spacing: -.04em; }
-.price small { font-family: "DM Sans", sans-serif; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 0; }
-.updated { color: var(--muted); font-size: 11px; margin-top: 7px; }
-.lower { display: grid; grid-template-columns: 1fr .8fr; gap: 26px; margin-top: 54px; }
-.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 27px; }
-.panel h2 { font-size: 27px; }
-.panel-intro { color: var(--muted); line-height: 1.6; font-size: 14px; margin: 10px 0 24px; }
-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-label { display: grid; gap: 7px; color: var(--muted); font-size: 12px; font-weight: 700; }
-input, select { width: 100%; border: 1px solid var(--line); background: #fff; padding: 12px 13px; border-radius: 7px; color: var(--ink); outline-color: var(--green); }
-.wide { grid-column: 1 / -1; }
-.submit { grid-column: 1 / -1; border: 0; background: var(--coral); color: white; padding: 13px; border-radius: 7px; font-weight: 700; }
-.submit:hover { background: #d95a45; }
-.message { display: none; grid-column: 1 / -1; color: var(--green); background: #e6f3de; padding: 11px; border-radius: 7px; font-size: 13px; }
-.message.show { display: block; }
-.why { background: var(--lime); border: 0; }
-.why h2 { color: var(--green-dark); }
-.benefit { display: flex; gap: 12px; border-top: 1px solid rgba(13,61,44,.16); padding: 17px 0; }
-.benefit:first-of-type { margin-top: 18px; }
-.benefit-icon { color: var(--green); font-size: 19px; }
-.benefit strong { display: block; color: var(--green-dark); font-size: 14px; }
-.benefit span { display: block; color: #53705f; font-size: 12px; line-height: 1.5; margin-top: 4px; }
-footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); margin-top: 54px; padding-top: 20px; color: var(--muted); font-size: 12px; }
-.modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(13, 61, 44, .55); z-index: 3; place-items: center; padding: 20px; }
-.modal-backdrop.open { display: grid; }
-.modal { width: min(430px, 100%); background: var(--card); padding: 28px; border-radius: 14px; box-shadow: 0 20px 70px rgba(0,0,0,.2); }
-.modal-top { display: flex; justify-content: space-between; align-items: start; }
-.modal h2 { font-size: 26px; }
-.close { border: 0; background: none; color: var(--muted); font-size: 23px; line-height: 1; }
-.amount { background: #edf3d9; color: var(--green-dark); border-radius: 7px; padding: 13px; margin: 20px 0; font-weight: 700; display: flex; justify-content: space-between; }
-.pay-form { display: grid; gap: 14px; }
-.pay-form button { border: 0; padding: 13px; border-radius: 7px; background: var(--green); color: white; font-weight: 700; }
-@media (max-width: 850px) {
-    .hero, .lower { grid-template-columns: 1fr; }
-    .price-grid { grid-template-columns: repeat(2, 1fr); }
-    .nav a { display: none; }
-}
-@media (max-width: 520px) {
-    .shell { padding: 0 18px 35px; }
-    .topbar { height: 68px; }
-    .hero { padding-top: 43px; gap: 28px; }
-    h1 { font-size: 46px; }
-    .price-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
-    .price-card { padding: 13px; }
-    .crop-name { font-size: 17px; }
-    .price { font-size: 20px; }
-    .panel { padding: 20px; }
-    form { grid-template-columns: 1fr; }
-    .wide, .submit, .message { grid-column: 1; }
-    footer { display: block; line-height: 1.8; }
-}
+        <section class="hero" id="top">
+            <div><div class="eyebrow">Tanzania's crop market pulse</div><h1>Know the price.<br><span>Move with confidence.</span></h1><p class="hero-copy">A simple, trusted view of crop prices across Tanzania. Compare markets, follow daily movement, and help farmers make better selling decisions.</p></div>
+            <div class="hero-note"><strong>Market update · 19 September 2026</strong>Prices are collected from regional contributors and market checks. Last full refresh: 06:00 EAT.</div>
+        </section>
+
+        <section class="dashboard" aria-label="Market overview">
+            <div class="dash-label">Today's market overview</div><div class="dash-number">31 <small>regions covered</small></div><div class="dash-sub">A growing picture of what Tanzania's crops are worth today.</div>
+            <div class="dash-stats"><div class="dash-stat"><b>24</b><span>crop types tracked</span></div><div class="dash-stat"><b>+8.4%</b><span>average weekly change</span></div></div>
+        </section>
+
+        <section id="prices">
+            <div class="section-head"><div><h2>Today's prices</h2><p>Indicative wholesale prices per 100 kg. Select a region to see its full crop catalogue.</p></div><div class="filter"><span>Viewing</span><select id="region-filter" aria-label="Filter prices by region"><option value="all">All Tanzania</option></select></div></div>
+            <div class="price-grid" id="price-grid"></div>
+        </section>
+
+        <section class="lower" id="submit">
+            <div class="panel"><h2>Share a market price</h2><p class="panel-intro">Are you at the market today? Your update helps everyone see a clearer, more current picture.</p><form id="price-form"><label>Your name<input name="name" maxlength="80" autocomplete="name" placeholder="e.g. Asha Mushi" required></label><label>Region<select name="region" id="submission-region" required><option value="">Choose region</option></select></label><label>Crop<input name="crop" maxlength="60" placeholder="e.g. Maize" required></label><label>Price (TZS)<input name="price" type="number" min="1" max="100000000" placeholder="e.g. 85000" required></label><label class="wide">Market or town<input name="market" maxlength="100" placeholder="e.g. Soko Kuu, Mbeya" required></label><button class="submit" type="submit">Send price update</button><div class="message" id="form-message">Thank you. Your price update has been received for review.</div></form></div>
+            <aside class="panel why" id="about"><h2>Built for the people who grow, trade and buy.</h2><div class="benefit"><div class="benefit-icon">01</div><div><strong>See the whole country</strong><span>Compare prices from coastal markets to the highlands in one place.</span></div></div><div class="benefit"><div class="benefit-icon">02</div><div><strong>Spot the movement</strong><span>Clear up and down signals show where the market is changing.</span></div></div><div class="benefit"><div class="benefit-icon">03</div><div><strong>Get it every morning</strong><span>Subscribe to daily price alerts by mobile money.</span></div></div></aside>
+        </section>
+        <footer><span>MAZAO PRICE POINT · TANZANIA</span><span>Prices are indicative and subject to local market verification.</span></footer>
+    </main>
+
+    <div class="modal-backdrop" id="payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-title"><div class="modal"><div class="modal-top"><div><div class="eyebrow">Secure payment verification</div><h2 id="payment-title">Stay one step ahead.</h2></div><button class="close" id="close-payment" aria-label="Close payment window">x</button></div><div class="amount"><label><input type="radio" name="plan" value="monthly" checked> Monthly access <strong>TZS 4,000</strong></label><label><input type="radio" name="plan" value="weekly"> Weekly access <strong>TZS 1,500</strong></label></div><form class="pay-form" id="payment-form"><label>Mobile money number<input type="tel" name="phone" placeholder="07XX XXX XXX" autocomplete="tel" pattern="(?:\+255|0)[67]\d{8}" title="Enter a valid Tanzanian mobile number" required></label><label>Choose network<select name="network" required><option value="">Select network</option><option>M-Pesa</option><option>Airtel Money</option><option>Mixx by Yas</option><option>Halopesa</option></select></label><button type="submit">Request secure payment</button></form><div class="message" id="payment-message">Your payment request will be sent to the selected mobile-money network. Access must be confirmed by the payment server.</div></div></div>
+
+</body>
+</html>
